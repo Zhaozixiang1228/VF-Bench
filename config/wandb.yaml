@@ -1,0 +1,3 @@
+wandb:
+  entity: XXXXX
+  project: video_fusion

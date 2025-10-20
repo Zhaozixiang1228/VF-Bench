@@ -11,7 +11,7 @@
 <a href="https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/">
   <img src="https://img.shields.io/badge/Dataset-Link-orange?logo=googledrive" alt="Dataset">
 </a>
-<a href="https://huggingface.co/prs-eth/rollingdepth-v1-0">
+<a href="https://huggingface.co/Zixiang-Zhao/Video-Fusion-UniVF">
   <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-green" alt="Hugging Face Model">
 </a>
 <p>
@@ -38,8 +38,8 @@
 
 
 ## 📢 News
-2025-10-07: Dataset VF-Bench is released.<br>
 2025-10-07: Code for UniVF is released.<br>
+2025-10-03: Dataset VF-Bench is released.<br>
 2025-09-18: Paper is accepted to **NeurIPS 2025 (Spotlight)**.<br>
 2025-05-26: Paper is on arXiv.<br>
 
@@ -71,7 +71,7 @@ pip install -r requirements.txt
 ```
 <!-- We also recommand [pyav](https://github.com/PyAV-Org/PyAV) for video I/O, which relies on [ffmpeg](https://www.ffmpeg.org/) (tested with version 5.1.7-0+deb12u1). -->
 
-## 🏃 Run inference demo (for understanding UniVF & see demo & for your own videos) 
+## 🏃 Run inference demo (for understanding UniVF & for your own videos) 
 All scripts are designed to run from the project root directory.
 
 ### ⬇ Download pre-trained checkpoints
@@ -90,7 +90,7 @@ bash src/script/test_demo.sh
 ```
 Demo fusion results will be saved under the `output_demo` directory.
 
-## 🚀 Run inference (for benchmarking & academic comparisons)
+## 🚀 Run inference (for academic benchmarking)
 ### 🎮 Prepare training & test datasets
 ```bash
 # for Multi-Exposure Video Fusion (1080p Version, 274G)
@@ -183,7 +183,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
   ```bash
   output/{exp_path}/checkpoint/{ckpt_name}/model.pth
   ```
-  where {ckpt_name} defaults to latest.
+  where `{ckpt_name}` defaults to `latest`.
 - Results are saved under:
   ```
   output/{exp_path}/test_results/{ckpt_name}/
@@ -218,7 +218,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
   0.353290323479717  0.7611716830747972  1.999268512089414  0.6781788132262878  29.606275117136093  1.3005935773550277
   -----------------  ------------------  -----------------  ------------------  ------------------  ------------------
   ```
-  which can match the results in Table 1 and Table 2 in our main paper.
+  which can match the results in Table 1-3 in our main paper.
 
 - Evaluation results on downsampled (low-resolution) datasets:
   ```
@@ -234,7 +234,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
   0.7695921974885145  0.9021468445117515  6.34392099623201  0.7871495458890482  8.293007993342428  0.2749553935254134
   ------------------  ------------------  ----------------  ------------------  -----------------  ------------------
   ```
-  which can match the results in Table S1 in our supplementary material.
+  which can match the results in Table 5 in our supplementary material.
 
 ### ⚙️ Inference settings
 - Command-line arguments override the default YAML configurations in the `config` directory.
@@ -245,7 +245,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
   data_split/IVF/VTMOT/split.json
   data_split/MVF/Harvard/split.json
   ```
-- The results reported in the main paper are obtained using high-resolution datasets for both training and testing. However, considering potential computational resource limitations, we also report results on low-resolution datasets in the supplementary material for reference and comparison.
+- The results reported in the main paper are obtained using **high-resolution datasets** for both **training and testing**. However, considering potential computational resource limitations, we also report results on **low-resolution datasets** in the supplementary material for reference and comparison.
 
 ## 🏋️ Training UniVF
 - After successfully preparing the environment and dataset as described above, Run training script:
@@ -280,7 +280,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
 
 ## 🙏 Acknowledgments
 We sincerely thank the authors of the following excellent works and datasets that inspired and supported this research:
-* Models and Codebases
+* Models and Codebases:
   * [SEA-RAFT](https://github.com/princeton-vl/SEA-RAFT)
   * [Marigold](https://github.com/prs-eth/Marigold) & [RollingDepth](https://rollingdepth.github.io/)
   * [VRT](https://github.com/JingyunLiang/VRT) & [RVRT](https://github.com/JingyunLiang/RVRT)
@@ -291,17 +291,17 @@ We sincerely thank the authors of the following excellent works and datasets tha
   * [Harvard](https://www.med.harvard.edu/AANLIB/home.html)
 
 ## 📖 Related image fusion work from our team
-* General image fusion
+* General image fusion:
   * [FILM (ICML'24)](https://zhaozixiang1228.github.io/Project/IF-FILM/); 
   * [ReFusion (IJCV'24)](https://github.com/HaowenBai/ReFusion).
-* Multi-modality image fusion
+* Multi-modality image fusion:
   * [CDDFuse (CVPR'23)](https://github.com/Zhaozixiang1228/MMIF-CDDFuse); 
   * [DDFM (ICCV'23 Oral)](https://github.com/Zhaozixiang1228/MMIF-DDFM); 
   * [EMMA (CVPR'24)](https://github.com/Zhaozixiang1228/MMIF-EMMA);
   * [TDFusion (CVPR'25 Highlight)](https://github.com/HaowenBai/TDFusion).
-* Multi-exposure image fusion
+* Multi-exposure image fusion:
   * [Retinex-MEF (ICCV'25)](https://github.com/HaowenBai/Retinex-MEF).
-* Remote sensing image fusion
+* Remote sensing image fusion:
   * [Hipandas (ICCV'25)](https://arxiv.org/abs/2412.04201).
 
 ## 🎓 Citation

@@ -1,0 +1,63 @@
+base_config:
+  - config/logging.yaml
+  - config/wandb.yaml
+
+dataset_cfg:
+  train: config/dataset/IVF/VTMOT/vtmot_5-frame.yaml
+  val: 
+    - config/dataset/IVF/VTMOT/vtmot_5-frame_stride150.yaml
+
+augmentation:
+  lr_flip_p: 0  # probability of left-right flipping
+  random_crop_hw: [128, 128] # random crop height and width, null to disable
+
+model:
+  align_mode: flow_warp
+  dim: 32
+  num_blocks: 4
+  head: 8
+  ffn_expansion_factor: 2
+  bias: false
+  LayerNorm_type: WithBias
+  output_mask: false
+
+dataloader:
+  num_workers: 8 
+  effective_batch_size: 32
+  max_train_batch_size: 4 # for gradient accumulation
+  seed: 2025 # to ensure continuity when resuming from checkpoint
+
+lr: 1.0e-4
+lr_scheduler:
+  kwargs:
+    total_iter: 20000
+    final_ratio: 0.01
+    warmup_steps: 200
+
+mixed_precision: false
+max_epoch: 10000
+max_iter: 20000
+
+trainer:
+  init_seed: 2025 # use null to train w/o seeding
+  save_vis: true
+  save_period: 50
+  backup_period: 500
+  validation_period: 300
+
+loss:
+  name: IVF_MVF_Loss
+  kwargs:
+    coef: [1,5,0,2]
+    use_occlusion: false
+    occ_threshold: 1.0
+    max_offset_mask: false
+
+eval:
+  eval_metrics:
+    - Metric_VIF
+    - Metric_SSIM
+    - Metric_MI
+    - Metric_Qabf
+    - Metric_BiSWE
+    - Metric_MS2R

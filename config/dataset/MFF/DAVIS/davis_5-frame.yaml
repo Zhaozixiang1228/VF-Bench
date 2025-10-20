@@ -1,0 +1,8 @@
+class_name: davis_dataset # class name of the dataset
+disp_name: MFF-DAVIS # display name of the dataset, used for logging
+dir: MFF/DAVIS.zip
+csv_dir: data_split/MFF/DAVIS # csv directory
+num_frames: 5 # number of frames to sample
+frame_gap_ls: [0] # frame gap between the first and second frames
+stride: 1 # stride for sampling frames
+frame_padding: true  # if true, repeat the first and last frames for padding

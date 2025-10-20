@@ -1,0 +1,7 @@
+{
+    "train": [
+    ],
+    "test": [
+        "MRI_SPECT1_case3"
+    ]
+}

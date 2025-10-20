@@ -1,0 +1,41 @@
+
+# ignore these folders
+/checkpoint
+/checkpoints
+/checkpoint/
+/data
+/data/
+/input
+/input/
+/output
+/output/
+/temp
+/temp/
+*/wandb/
+*/venv/
+/cache
+/cache/
+/.slurm/
+venv/
+/.vscode/
+/output_fig
+/output_fig/
+/output_demo
+/output_demo/
+
+**/.ipynb_checkpoints/
+.idea
+
+# ignore submodule folders
+kbx_toolbox/
+ml-depth-pro/
+RollingDepth/
+Video-Depth-Anything/
+
+# ignore these types
+*.pyc
+*.out
+*.log
+*.mexa64
+*.pdf
+*.tar
