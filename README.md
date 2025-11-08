@@ -1,3 +1,15 @@
+<style>
+a {
+  text-decoration: none; 
+  border: none;
+}
+a img {
+  border: none;
+  vertical-align: middle; 
+  margin-right: 4px;
+}
+</style>
+
 <div align="center">
 <h1>A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking</h1>
 <h3>NeurIPS 2025 (Spotlight)</h3>
