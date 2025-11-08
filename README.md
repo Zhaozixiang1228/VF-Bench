@@ -149,11 +149,11 @@ After setup, your project should look like this:
 │   │   └── checkpoint
 │   └── UniVF-MVF                # MVF (medical fusion) task video fusion model in our paper
 │       └── checkpoint
-├── README.md                    # Project description and instructions
-├── requirements.txt             # Python dependencies list
-├── src                          # Source code (model, data processing, training)
-├── test.py                      # Testing script for evaluation
-└── train.py                     # Training script
+├── README.md                     # Project description and instructions
+├── requirements.txt              # Python dependencies list
+├── src                           # Source code (model, data processing, training)
+├── test.py                       # Testing script for evaluation
+└── train.py                      # Training script
 ```
 
 **Tips:**
