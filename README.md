@@ -2,24 +2,18 @@
 <h1>A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking</h1>
 <h3>NeurIPS 2025 (Spotlight)</h3>
 
-<div align="center" style="line-height:0;">
-
-<!-- 强制去除所有蓝色短横线 -->
-<a href="https://vfbench.github.io/" style="text-decoration:none;border:none;outline:none;box-shadow:none;">
-  <img src="src/images/badge-website.svg" alt="Website" style="vertical-align:middle;margin-right:4px;border:none;outline:none;box-shadow:none;">
+<a href="https://vfbench.github.io/">
+  <img src="src/images/badge-website.svg" alt="Website">
 </a>
-<a href="https://arxiv.org/abs/2505.19858" style="text-decoration:none;border:none;outline:none;box-shadow:none;">
-  <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv" alt="arXiv" style="vertical-align:middle;margin-right:4px;border:none;outline:none;box-shadow:none;">
+<a href="https://arxiv.org/abs/2505.19858">
+  <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv" alt="arXiv">
 </a>
-<a href="https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/" style="text-decoration:none;border:none;outline:none;box-shadow:none;">
-  <img src="https://img.shields.io/badge/Dataset-Link-orange?logo=googledrive" alt="Dataset" style="vertical-align:middle;margin-right:4px;border:none;outline:none;box-shadow:none;">
+<a href="https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/">
+  <img src="https://img.shields.io/badge/Dataset-Link-orange?logo=googledrive" alt="Dataset">
 </a>
-<a href="https://huggingface.co/Zixiang-Zhao/Video-Fusion-UniVF" style="text-decoration:none;border:none;outline:none;box-shadow:none;">
-  <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-green" alt="Hugging Face Model" style="vertical-align:middle;margin-right:4px;border:none;outline:none;box-shadow:none;">
+<a href="https://huggingface.co/Zixiang-Zhao/Video-Fusion-UniVF">
+  <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-green" alt="Hugging Face Model">
 </a>
-
-</div>
-
 <p>
 <a href="https://zhaozixiang1228.github.io/" style="text-decoration:none;">Zixiang Zhao</a><sup>1</sup>, 
 <a href="https://haowenbai.github.io/" style="text-decoration:none;">Haowen Bai</a><sup>2</sup>, 
@@ -149,11 +143,11 @@ After setup, your project should look like this:
 │   │   └── checkpoint
 │   └── UniVF-MVF                # MVF (medical fusion) task video fusion model in our paper
 │       └── checkpoint
-├── README.md                     # Project description and instructions
-├── requirements.txt              # Python dependencies list
-├── src                           # Source code (model, data processing, training)
-├── test.py                       # Testing script for evaluation
-└── train.py                      # Training script
+├── README.md                    # Project description and instructions
+├── requirements.txt             # Python dependencies list
+├── src                          # Source code (model, data processing, training)
+├── test.py                      # Testing script for evaluation
+└── train.py                     # Training script
 ```
 
 **Tips:**
