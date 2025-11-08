@@ -1,40 +1,29 @@
-<style>
-a {
-  text-decoration: none; 
-  border: none;
-}
-a img {
-  border: none;
-  vertical-align: middle; 
-  margin-right: 4px;
-}
-</style>
-
 <div align="center">
 <h1>A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking</h1>
 <h3>NeurIPS 2025 (Spotlight)</h3>
 
-<a href="https://vfbench.github.io/">
-  <img src="src/images/badge-website.svg" alt="Website">
+<a href="https://vfbench.github.io/" style="text-decoration:none;border:none;">
+  <img src="src/images/badge-website.svg" alt="Website" style="vertical-align:middle;margin-right:4px;border:none;">
 </a>
-<a href="https://arxiv.org/abs/2505.19858">
-  <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv" alt="arXiv">
+<a href="https://arxiv.org/abs/2505.19858" style="text-decoration:none;border:none;">
+  <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv" alt="arXiv" style="vertical-align:middle;margin-right:4px;border:none;">
 </a>
-<a href="https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/">
-  <img src="https://img.shields.io/badge/Dataset-Link-orange?logo=googledrive" alt="Dataset">
+<a href="https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/" style="text-decoration:none;border:none;">
+  <img src="https://img.shields.io/badge/Dataset-Link-orange?logo=googledrive" alt="Dataset" style="vertical-align:middle;margin-right:4px;border:none;">
 </a>
-<a href="https://huggingface.co/Zixiang-Zhao/Video-Fusion-UniVF">
-  <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-green" alt="Hugging Face Model">
+<a href="https://huggingface.co/Zixiang-Zhao/Video-Fusion-UniVF" style="text-decoration:none;border:none;">
+  <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-green" alt="Hugging Face Model" style="vertical-align:middle;margin-right:4px;border:none;">
 </a>
+
 <p>
-<a href="https://zhaozixiang1228.github.io/">Zixiang Zhao</a><sup>1</sup>, 
-<a href="https://haowenbai.github.io/">Haowen Bai</a><sup>2</sup>, 
-<a href="http://www.kebingxin.com/">Bingxin Ke</a><sup>1</sup>, 
-<a href="https://openreview.net/profile?id=~Yukun_Cui2">Yukun Cui</a><sup>2</sup>, 
-<a href="https://openreview.net/profile?id=~Lilun_Deng1">Lilun Deng</a><sup>2</sup>, 
-<a href="https://yulunzhang.com/">Yulun Zhang</a><sup>3</sup>, 
-<a href="https://cszn.github.io/">Kai Zhang</a><sup>4</sup>, 
-<a href="https://scholar.google.com/citations?user=FZuNgqIAAAAJ&hl=en">Konrad Schindler</a><sup>1</sup>
+<a href="https://zhaozixiang1228.github.io/" style="text-decoration:none;">Zixiang Zhao</a><sup>1</sup>, 
+<a href="https://haowenbai.github.io/" style="text-decoration:none;">Haowen Bai</a><sup>2</sup>, 
+<a href="http://www.kebingxin.com/" style="text-decoration:none;">Bingxin Ke</a><sup>1</sup>, 
+<a href="https://openreview.net/profile?id=~Yukun_Cui2" style="text-decoration:none;">Yukun Cui</a><sup>2</sup>, 
+<a href="https://openreview.net/profile?id=~Lilun_Deng1" style="text-decoration:none;">Lilun Deng</a><sup>2</sup>, 
+<a href="https://yulunzhang.com/" style="text-decoration:none;">Yulun Zhang</a><sup>3</sup>, 
+<a href="https://cszn.github.io/" style="text-decoration:none;">Kai Zhang</a><sup>4</sup>, 
+<a href="https://scholar.google.com/citations?user=FZuNgqIAAAAJ&hl=en" style="text-decoration:none;">Konrad Schindler</a><sup>1</sup>
 </p>
 
 <p>
@@ -45,7 +34,6 @@ a img {
 </p>
 
 <img src="src/images/teaser.jpg" alt="Project Teaser" width="800">
-
 </div>
 
 
