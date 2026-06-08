@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-data_dir=data2/IVF
+data_dir=data/IVF
 mkdir -p $data_dir
 cd $data_dir
 

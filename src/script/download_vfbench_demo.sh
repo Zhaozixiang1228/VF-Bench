@@ -8,5 +8,5 @@ fi
 
 wget -nv --show-progress https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/vfbench-demo.zip
 
-unzip vfbench-demo.zip
+unzip -n vfbench-demo.zip
 rm vfbench-demo.zip

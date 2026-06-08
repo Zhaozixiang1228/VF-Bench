@@ -3,6 +3,7 @@ matplotlib
 torch==2.4.0
 torchvision==0.19.0
 transformers>=4.32.1
+huggingface-hub
 omegaconf
 tensorboard
 wandb
@@ -10,8 +11,13 @@ einops
 imageio
 accelerate
 scipy
+kornia
 torchshow
 tabulate
 pandas
 opencv-python
 moviepy==1.0.3
+pillow
+tqdm
+pytz
+h5py

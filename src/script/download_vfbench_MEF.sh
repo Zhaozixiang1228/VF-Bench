@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-data_dir=data2/MEF
+data_dir=data/MEF
 mkdir -p $data_dir
 cd $data_dir
 

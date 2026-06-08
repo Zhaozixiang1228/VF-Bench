@@ -1,3 +1,3 @@
 wandb:
-  entity: XXXXX
+  entity: null
   project: video_fusion

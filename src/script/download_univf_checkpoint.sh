@@ -8,5 +8,5 @@ fi
 
 wget -nv --show-progress https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/UniVF-checkpoints.zip
 
-unzip UniVF-checkpoints.zip
+unzip -n UniVF-checkpoints.zip
 rm UniVF-checkpoints.zip

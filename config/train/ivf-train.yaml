@@ -4,8 +4,6 @@ base_config:
 
 dataset_cfg:
   train: config/dataset/IVF/VTMOT/vtmot_5-frame.yaml
-  val: 
-    - config/dataset/IVF/VTMOT/vtmot_5-frame_stride150.yaml
 
 augmentation:
   lr_flip_p: 0  # probability of left-right flipping
@@ -43,7 +41,6 @@ trainer:
   save_vis: true
   save_period: 50
   backup_period: 500
-  validation_period: 300
 
 loss:
   name: IVF_MVF_Loss
