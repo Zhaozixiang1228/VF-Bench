@@ -43,7 +43,7 @@
 2025-05-26: Paper is on arXiv.<br>
 
 ## 🛠️ Setup
-The code was tested on: Debian 12, Python 3.10.16, CUDA 12.8, GeForce RTX 4090
+The code was tested on Debian 12, Python 3.10.16, CUDA 12.8, and GeForce RTX 4090.
 
 ### 📦 Repository
 ```bash
@@ -52,7 +52,7 @@ cd VF-Bench
 ```
 
 ### 🐍 Python environment
-Create python environment:
+Create a Python environment:
 ```bash
 # with venv
 python -m venv venv/vfbench
@@ -64,17 +64,17 @@ conda activate vfbench
 ```
 
 ### 💻 Dependencies
-Install dependicies: 
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-<!-- We also recommand [pyav](https://github.com/PyAV-Org/PyAV) for video I/O, which relies on [ffmpeg](https://www.ffmpeg.org/) (tested with version 5.1.7-0+deb12u1). -->
+<!-- We also recommend [pyav](https://github.com/PyAV-Org/PyAV) for video I/O, which relies on [ffmpeg](https://www.ffmpeg.org/) (tested with version 5.1.7-0+deb12u1). -->
 
 ## 🏃 Run inference demo (for understanding UniVF & for your own videos) 
 All scripts are designed to run from the project root directory.
 
 ### ⬇ Download pre-trained checkpoints
-The checkpoints are hosted on [ETH Cloud](https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/) and [Hugging Face](https://huggingface.co/Zixiang-Zhao/Video-Fusion-UniVF). Use the following script to download the checkpoint weights locally:
+The checkpoints are hosted on [ETH Cloud](https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/) and [Hugging Face](https://huggingface.co/Zixiang-Zhao/Video-Fusion-UniVF). Use the following script to download the `SEA-RAFT` and `UniVF` checkpoint weights locally:
 ```bash
 bash src/script/download_univf_checkpoint.sh
 ```
@@ -82,7 +82,7 @@ bash src/script/download_univf_checkpoint.sh
 ```bash
 bash src/script/download_vfbench_demo.sh
 ```
-These example videos are to be used as demo, also shown in our [project homepage](https://vfbench.github.io/).
+These example videos are used for the demo and are also shown on our [project homepage](https://vfbench.github.io/).
 ### 🏃 Run the demo
 ```bash
 bash src/script/test_demo.sh
@@ -90,7 +90,9 @@ bash src/script/test_demo.sh
 Demo fusion results will be saved under the `output_demo` directory.
 
 ## 🚀 Run inference (for academic benchmarking)
-### 🎮 Prepare training & test datasets
+### 🎮 Prepare datasets
+The download scripts save datasets under the `data` directory, which is the default `--base_data_dir` used by `train.py` and `test.py`.
+
 ```bash
 # for Multi-Exposure Video Fusion (1080p Version, 274G)
 bash src/script/download_vfbench_MEF.sh
@@ -105,10 +107,10 @@ bash src/script/download_vfbench_IVF.sh
 bash src/script/download_vfbench_MVF.sh
 
 # for Multi-Exposure Video Fusion (540p Version, 83G)
-bash src/script/download_vfbench_MFF_480P.sh
+bash src/script/download_vfbench_MEF_540P.sh
 
 # for Multi-Focus Video Fusion Dataset (480p Version, 9.6G)
-bash src/script/download_vfbench_MFF_540P.sh
+bash src/script/download_vfbench_MFF_480P.sh
 ```
 Alternatively, download manually from [ETH Cloud](https://share.phys.ethz.ch/~pf/zixiangdata/vfbench/) or [Baidu Drive](https://pan.baidu.com/s/1U91bMcnj-4yz2QKxt5XQIw?pwd=akip). 
 
@@ -132,7 +134,7 @@ After setup, your project should look like this:
 │   │   └── DAVIS.zip
 │   └── MVF                      # Medical Video Fusion datasets
 │       └── Harvard.zip
-├── output                       # Model outputs
+├── output                       # Model outputs and downloaded UniVF checkpoints
 │   ├── UniVF-IVF                # IVF task video fusion model in our paper
 │   │   └── checkpoint
 │   ├── UniVF-MEF                # MEF task video fusion model in our paper
@@ -236,7 +238,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
   which can match the results in Table 5 in our supplementary material.
 
 ### ⚙️ Inference settings
-- Command-line arguments override the default YAML configurations in the `config` directory.
+- Runtime command-line arguments such as `--base_data_dir`, `--batch_size`, and `--device` override the script defaults. Dataset and model defaults are defined by the YAML files in the `config` directory.
 - If you want to modify the train/test split, please edit the corresponding `data_split/<task>/<dataset>/split.json` file, for example:
   ```
   data_split/MEF/YouTube-HDR/split.json
@@ -247,7 +249,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
 - The results reported in the main paper are obtained using **high-resolution datasets** for both **training and testing**. However, considering potential computational resource limitations, we also report results on **low-resolution datasets** in the supplementary material for reference and comparison.
 
 ## 🏋️ Training UniVF
-- After successfully preparing the environment and dataset as described above, Run training script:
+- After preparing the environment and dataset as described above, run the training script:
   ```bash
   # for Multi-Exposure Video Fusion
   python train.py --task_name MEF
@@ -272,7 +274,7 @@ For example, in `config/dataset/IVF/VTMOT/vtmot_5-frame.yaml`, change `dir: IVF/
   ```
 - If you want to resume training, run command like:
   ```bash
-  python train.py --task_name MEF --resume_run output/.../checkpoint/step_xxx
+  python train.py --task_name MEF --resume_run output/.../checkpoint/latest # or step_xxx
   ```
 <!-- ### 🔧 Training settings -->
 
